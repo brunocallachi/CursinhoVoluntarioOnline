@@ -9,7 +9,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 
-public class EducacaoParaTodesModel {
+public class Tema {
 
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
