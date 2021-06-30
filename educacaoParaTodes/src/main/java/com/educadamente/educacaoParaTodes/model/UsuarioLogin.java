@@ -2,6 +2,7 @@ package com.educadamente.educacaoParaTodes.model;
 
 
 public class UsuarioLogin {
+	private long id;
 	
 	private String nome;
 	
@@ -9,6 +10,22 @@ public class UsuarioLogin {
 	
 	private String email;
 	
+	private String token;
+	
+	private String foto;
+	
+	private String tipo;
+	
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -41,7 +58,23 @@ public class UsuarioLogin {
 		this.token = token;
 	}
 
-	private String token;
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+
 	
 
 }

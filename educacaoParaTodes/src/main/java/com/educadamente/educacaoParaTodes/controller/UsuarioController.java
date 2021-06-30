@@ -29,6 +29,19 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 	
+	@Autowired
+	private UsuarioRepository repository;
+	
+	@GetMapping
+    public ResponseEntity<List<Usuario>> GetAll(){
+        return ResponseEntity.ok(repository.findAll());
+    }
+
+    @GetMapping("{/id}")
+    public ResponseEntity<Usuario> getById(@PathVariable long id){
+        return repository.findById(id).map(resposta->ResponseEntity.ok(resposta))
+                .orElse(ResponseEntity.notFound().build());
+    }
 	
 	@PostMapping("/login")
 	public ResponseEntity<UsuarioLogin>Autentication(@RequestBody Optional <UsuarioLogin> user){
