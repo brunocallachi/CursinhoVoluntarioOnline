@@ -30,6 +30,12 @@ public class Postagem {
 	@NotNull
 	private String texto;
 	
+	@NotNull
+	private String linkVideo;
+	
+	private String linkExercicio;
+
+
 	@ManyToOne
 	@JsonIgnoreProperties("postagens") 
 	private Tema tema;
@@ -84,6 +90,22 @@ public class Postagem {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
+	}
+	
+	public String getLinkVideo() {
+		return linkVideo;
+	}
+
+	public void setLinkVideo(String linkVideo) {
+		this.linkVideo = linkVideo;
+	}
+
+	public String getLinkExercicio() {
+		return linkExercicio;
+	}
+
+	public void setLinkExercicio(String linkExercicio) {
+		this.linkExercicio = linkExercicio;
 	}
 	
 }
