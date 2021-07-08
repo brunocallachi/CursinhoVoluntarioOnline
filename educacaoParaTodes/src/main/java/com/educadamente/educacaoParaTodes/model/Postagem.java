@@ -1,5 +1,6 @@
 package com.educadamente.educacaoParaTodes.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -9,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -34,6 +37,10 @@ public class Postagem {
 	private String linkVideo;
 	
 	private String linkExercicio;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date data = new java.sql.Date(System.currentTimeMillis());
+	
 
 
 	@ManyToOne
@@ -108,4 +115,11 @@ public class Postagem {
 		this.linkExercicio = linkExercicio;
 	}
 	
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
 }
