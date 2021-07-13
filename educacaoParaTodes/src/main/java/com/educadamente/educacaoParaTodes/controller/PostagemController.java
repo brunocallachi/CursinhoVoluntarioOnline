@@ -45,11 +45,13 @@ public class PostagemController {
 	
 	@PostMapping
 	public ResponseEntity<Postagem> post(@RequestBody Postagem postagem) {
+		postagem.formatarLinkVideo();
 		return ResponseEntity.status(HttpStatus.CREATED).body(repositorio.save(postagem));
 	}
 	
 	@PutMapping
 	public ResponseEntity<Postagem> put(@RequestBody Postagem postagem) {
+		postagem.formatarLinkVideo();
 		return ResponseEntity.ok(repositorio.save(postagem));
 	}
 	

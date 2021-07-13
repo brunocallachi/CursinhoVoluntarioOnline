@@ -22,7 +22,6 @@ public class Tema {
 	private Integer id;
 	
 	@NotNull
-	@Size (min = 20, max = 250)
 	private String descricao;
 	
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)

@@ -24,7 +24,7 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@NotNull
+	
 	private String descricaoPostagem;
 	
 	@NotNull
@@ -122,4 +122,13 @@ public class Postagem {
 	public void setData(Date data) {
 		this.data = data;
 	}
+	
+	public void formatarLinkVideo() {
+        if (!linkVideo.contains("embed")) {
+            String[] link = linkVideo.split("=");
+            String linkValido = link[1].split("&")[0];
+            linkVideo = String.format("https://www.youtube.com/embed/%s", linkValido);
+
+    }
+    }
 }
